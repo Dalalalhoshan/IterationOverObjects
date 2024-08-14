@@ -106,3 +106,17 @@ console.log(movies);
       The function should return an object where the keys are movie genres 
       and the values are arrays of movie titles that belong to those genres. 
   ********************************/
+
+function groupMoviesByGenre(movies) {
+  let str = {};
+  movies.forEach((movie) => {
+    if (str[movie.genre]) {
+      str[movie.genre].push(movie.title);
+    } else {
+      str[movie.genre] = [movie.title];
+    }
+  });
+
+  return str;
+}
+console.log(groupMoviesByGenre(movies));
